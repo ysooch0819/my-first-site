@@ -1,12 +1,10 @@
-function loadPosts(){
-    const data = localStorage.getItem("posts");
-    if(data){
-        return JSON.parse(data);
-    }
-    localStorage.setItem("posts", JSON.stringify(defaultPosts));
-    return defaultPosts;
+const STORAGE_KEY = "posts";
+
+function getPosts() {
+  const data = localStorage.getItem(STORAGE_KEY);
+  return data ? JSON.parse(data) : [];
 }
 
-function savePosts(posts){
-    localStorage.setItem("posts", JSON.stringify(posts));
+function savePosts(posts) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
 }
