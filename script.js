@@ -1,6 +1,10 @@
 const postList = document.getElementById("post-list");
 const posts = loadPosts();
 
+function sayHello() {
+  alert("눌렀다!");
+}
+
 function renderPosts() {
   postList.innerHTML = "";
 
