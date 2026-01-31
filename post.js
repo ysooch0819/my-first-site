@@ -17,3 +17,4 @@ const post = posts.find((p) => p.id === postId);
 // getElementById() 를 활용해서 해당 post의 title, summary를 가져와서 html의 빈자리에 채운다.
 document.getElementById("post-title").textContent = post.title;
 document.getElementById("post-content").textContent = post.summary;
+document.getElementById("edit-link").href = `edit.html?id=${postId}`;
