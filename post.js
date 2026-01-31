@@ -11,6 +11,7 @@ const postId = parseInt(params.get("id"));
 
 // posts 데이터 안에서 postId 숫자와 일치하는 데이터(게시글)를 찾는다.
 // 이 경우 posts 안에서 id가 2 인 데이터를 찾아서 post 값으로 저장한다.
+const posts = loadPosts();
 const post = posts.find((p) => p.id === postId);
 
 // getElementById() 를 활용해서 해당 post의 title, summary를 가져와서 html의 빈자리에 채운다.

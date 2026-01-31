@@ -9,14 +9,16 @@ saveBtn.addEventListener("click", () => {
     return;
   }
 
+  const posts = loadPosts();
+
   const newPost = {
-    id: posts.length + 1,
-    title: title,
+    id: Date.now(),
+    title,
     summary: content,
   };
 
   posts.push(newPost);
+  savePosts(posts);
 
-  alert("글이 저장되었습니다 (새로고침하면 사라짐)");
   window.location.href = "index.html";
 });
