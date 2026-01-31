@@ -1,6 +1,6 @@
 const STORAGE_KEY = "posts";
 
-function getPosts() {
+function loadPosts() {
   const data = localStorage.getItem(STORAGE_KEY);
   return data ? JSON.parse(data) : [];
 }
