@@ -1,3 +1,6 @@
+alert("write.js 로드됨");
+
+
 const titleInput = document.getElementById("title-input");
 const contentInput = document.getElementById("content-input");
 const saveBtn = document.getElementById("save-btn");
