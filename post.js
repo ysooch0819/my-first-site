@@ -18,3 +18,9 @@ const post = posts.find((p) => p.id === postId);
 document.getElementById("post-title").textContent = post.title;
 document.getElementById("post-content").textContent = post.summary;
 document.getElementById("edit-link").href = `edit.html?id=${postId}`;
+
+const editLink = document.getElementById("edit-link");
+
+if (post) {
+  editLink.href = `write.html?id=${post.id}`;
+}
