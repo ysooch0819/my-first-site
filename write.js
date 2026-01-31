@@ -22,3 +22,15 @@ saveBtn.addEventListener("click", () => {
 
   window.location.href = "index.html";
 });
+
+const params = new URLSearchParams(window.location.search);
+const postId = params.get("id");
+
+if (postId) {
+  const post = getPosts().find(p => p.id == postId);
+
+  if (post) {
+    document.getElementById("title-input").value = post.title;
+    document.getElementById("content-input").value = post.content;
+  }
+}
