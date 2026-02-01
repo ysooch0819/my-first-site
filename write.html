@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>글쓰기</title>
-  </head>
-  <body>
-    <h1>글쓰기</h1>
-    
-    <input id="post-author" placeholder="작성자" />
-    <input id="title-input" placeholder="제목" />
-    <textarea id="content-input" placeholder="내용"></textarea>
+<head>
+  <title>글 작성</title>
+</head>
+<body>
+  <h1>글 작성</h1>
 
-    <button id="save-btn">저장</button>
+  <!-- 🔴 이 id들 이름이 write.js와 1:1로 맞아야 함 -->
+  <input id="post-author" placeholder="작성자 이름" />
+  <br /><br />
 
-    <br /><br />
-    <a href="index.html">← 목록으로</a>
+  <input id="post-title" placeholder="제목" />
+  <br /><br />
 
-    <script src="posts.js"></script>
-    <script src="storage.js"></script>
-    <script src="write.js"></script>
-  </body>
+  <textarea id="post-content" placeholder="내용"></textarea>
+  <br /><br />
+
+  <button id="save-btn">저장</button>
+
+  <!-- ✅ JS는 맨 아래 -->
+  <script src="posts.js"></script>
+  <script src="storage.js"></script>
+  <script src="write.js"></script>
+</body>
 </html>
