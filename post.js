@@ -10,6 +10,18 @@ const post = posts.find((p) => p.id === postId);
 document.getElementById("post-title").textContent = post.title;
 document.getElementById("post-content").textContent = post.content;
 
+// 댓글 배열 초기화 (없으면 생성)
+if (!post.comments) {
+  post.comments = [];
+}
+
+if (!post) {
+  alert("게시글을 찾을 수 없습니다.");
+  location.href = "index.html";
+}
+
+
+
 // 4. 수정 링크 (기존 기능 유지)
 const editLink = document.getElementById("edit-link");
 if (post) {
