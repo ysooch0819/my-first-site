@@ -85,17 +85,19 @@ function renderComments() {
 renderComments();
 
 // 댓글 등록
+const commentAuthorInput = document.getElementById("comment-author");
 const commentInput = document.getElementById("comment-input");
 const commentBtn = document.getElementById("comment-btn");
 
 commentBtn.addEventListener("click", () => {
+  const author = commentAuthorInput.value.trim() || "익명";
   const text = commentInput.value.trim();
   if (!text) return;
 
   // 댓글 객체 추가
   post.comments.push({
-    author: username,
-    text: text,
+    author,
+    text,
     createdAt: new Date().toISOString()
   });
 
