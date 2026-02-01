@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>내 첫 사이트</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>안녕하세요</h1>
-    <p>이건 내가 만든 첫 웹페이지입니다.</p>
+<head>
+  <title>게시글 목록</title>
+</head>
+<body>
+  <h1>게시글 목록</h1>
+  <ul id="post-list"></ul>
 
-    <button onclick="sayHello()">눌러봐</button>
-    
-    <h2>게시글 목록</h2>
-    <ul id="post-list"></ul>
+  <script src="posts.js"></script>
+  <script src="storage.js"></script>
+  <script>
+    const posts = loadPosts();
+    const postList = document.getElementById("post-list");
 
-    <a href="write.html">글쓰기</a>
-    
-    <!-- script 순서 중요 -->
-    <script src="posts.js"></script>    <!-- 기본 글 -->
-    <script src="storage.js"></script>  <!-- 렌더링 -->
-    <script src="script.js"></script>   <!-- 저장 로직 -->
-    
-  </body>
+    posts.forEach((post) => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.textContent = post.title;
+      link.href = `post.html?id=${post.id}`;
+      li.appendChild(link);
+      postList.appendChild(li);
+    });
+  </script>
+</body>
 </html>
